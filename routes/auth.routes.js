@@ -25,7 +25,7 @@ router.post('/signup', (req, res, next) => {
     return
   }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+  const emailRegex = /^[^\s@]+(\.[^\s@]+)*@[^\s@]+\.[^\s@]{2,}$/
 
   if (!emailRegex.test(email)) {
     res.status(400).json({ message: 'Provide a valid email address.' })

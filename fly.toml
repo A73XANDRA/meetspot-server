@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for final-project-server-rough-wave-6243 on 2024-08-29T15:51:34+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'final-project-server-rough-wave-6243'
+primary_region = 'cdg'
+
+[build]
+
+[http_service]
+  internal_port = 5005
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
